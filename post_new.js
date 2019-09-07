@@ -22,7 +22,7 @@ function post_new() {
                     let text = `https://2ch.hk/b/res/${thread[1]}.html`;
                     if (links.indexOf(text) === -1) {
                         links.push(text);
-                        bot.sendMessage("@bot_test_2ch", text).then(res => {
+                        bot.sendMessage("@daily_b", text).then(res => {
                             console.log(res);
                         });
                         console.log(text);
