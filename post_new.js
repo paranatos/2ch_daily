@@ -6,7 +6,7 @@ const config = dotenv.config({
 })
 const token = config.parsed.bot_key;
 const bot = new TelegramBot(token);
-
+const chat_name = "@daily_b";
 let dates = [];
 let links = [];
 let n = 15;
@@ -22,7 +22,7 @@ function post_new() {
                     let text = `https://2ch.hk/b/res/${thread[1]}.html`;
                     if (links.indexOf(text) === -1) {
                         links.push(text);
-                        bot.sendMessage("@daily_b", text).then(res => {
+                        bot.sendMessage(chat_name, text).then(res => {
                             console.log(res);
                         });
                         console.log(text);
@@ -41,7 +41,7 @@ function post_new() {
 function clear_links() {
     links = [];
 }
-bot.sendMessage("@bot_test_2ch", "starting").then(res => {
+bot.sendMessage(chat_name, "starting").then(res => {
     console.log(res);
 });
 
